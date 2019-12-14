@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <link rel="stylesheet" href="/static/css/main.css">
+      <title> Register </title>
+   </head>
+
+   <body>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+          {% for category, message in messages %}
+              <div class="alert alert-{{ category }} alert-dismissible" role="alert">
+                  <span>{{ message }}</span>
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+          {% endfor %}
+      {% endif %}
+  {% endwith %}
+
+     <div class="container">
+       <div class="row">
+         <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+           <div class="card card-signin my-5">
+             <div class="card-body">
+               <h5 class="card-title text-center">Register</h5>
+               
+               <form class="form-signin" method="POST" action = '/register'>
+
+                <div class="form-label-group">
+                   <input type="text" id="names" name = "name" class="form-control" placeholder="Name" required autofocus>
+                   <label for="names">Name</label>
+                 </div>
+
+                 <div class="form-label-group">
+                   <input type="email" id="emails" name="email" class="form-control" placeholder="Email address" required autofocus>
+                   <label for="emails">Email address</label>
+                 </div>
+
+                 <div class="form-label-group">
+                   <input type="password" id="passwords" name="password" class="form-control" placeholder="Password" required>
+                   <label for="passwords">Password</label>
+                 </div>
+
+                 <div class="form-label-group">
+                   <input type="password" id="confirmPasswords" name="confirmPassword" class="form-control" placeholder="Confirm Password" required>
+                   <label for="confirmPasswords"> Confirm Password</label>
+                 </div>
+
+                 &nbsp;
+                <div class="form-label-group">
+                    <select name = "rolePicker" class="selectpicker form-control">
+                      <option disabled selected> What are you? Select your role!
+                      <option>Student (1-2) </option>
+                      <option>Student (3-4) </option>
+                      <option>Student (5-8) </option>
+                      <option>Student (9-12)</option>
+                      <option>Teacher</option>
+                      <option>Admin</option>
+                    </select>
+                </div>
+                <br>
+                  
+                 <button class="btn btn-lg btn-primary btn-block text-uppercase" id = "button" type="submit">Register</button>
+                 <br>
+                 <div class = "form-label" style = "float:right">
+                 <font align = "right" color = "white"> Already have an account? </font><a href = "/login"> <b> Login Here </b> </a></font> 
+               </div>
+
+               </form>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </body>
+
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!-- code by webdevtrick (https://webdevtrick.com) -->
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Quiz</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+      <!-- Bootstrap core CSS -->
+    <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body{
+            font-size: 20px;
+            font-family: 'Work Sans', sans-serif;
+            color: #333;
+            font-weight: 300;
+            text-align: center;
+            background-color: #fff;
+        }
+
+        h1{
+            font-weight: 300;
+            margin: 0px;
+            padding: 10px;
+            font-size: 20px;
+            background-color: #444;
+            color: #fff;
+            text-align: center;
+        }
+
+        .question{
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .answers {
+            margin-bottom: 20px;
+            text-align: left;
+            display: inline-block;
+        }
+
+        .answers label{
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .slide{
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            z-index: 1;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        .active-slide{
+            opacity: 1;
+            z-index: 2;
+        }
+
+        .quiz-container{
+            position: relative;
+            height: 150px;
+            margin-top: 40px;
+        }
+        .results{
+            float:center;
+            font-weight: 300;
+            font-size: 30px;
+            color: #00FF00
+        }
+    </style>
+</head>
+<body>
+    <h1>Assignment &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<button class = "btn btn-primary hide" style = "float:right; margin-right: 10px;" id="exitButton"> Exit Quiz </button> </h1>
+        <div class="quiz-container">
+            <div id="quiz"></div>
+        </div>
+
+        <button class = "btn btn-primary" id="previous">Previous Question</button>
+        <button class = "btn btn-primary" id="next">Next Question</button>
+        <button class = "btn btn-success" id="submit">Submit Quiz</button>
+        <br><br><br>
+        <div id="results"></div>
+    <script type="text/javascript">
+        document.getElementById("exitButton").onclick = function () {
+            location.href = "/student";
+        };
+    </script>
+<script src="static/js/jquery.min.js" type="text/javascript"></script>
+<script src="static/js/takeQuiz.js"></script>
+</body>
+</html>

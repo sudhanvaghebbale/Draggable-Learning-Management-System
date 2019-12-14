@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Review Grades</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<link href="https://fonts.googleapis.com/css?family=Nanum+Brush+Script&display=swap" rel="stylesheet">
+
+	</head>
+
+	<body>
+		{% block body %}
+
+<!-- Navigation -->
+        <!-- Grid row-->
+        <nav class="row bg-light sticky-top text-center d-flex justify-content-center mb-4">
+
+          <!-- Grid column -->
+          <div class="col-md-2 pt-3">
+            <h1 class="font-weight-bold" style = "font-family: 'Nanum Brush Script', cursive;">
+              <a href = "/adminconsole" style= "text-decoration: none;">LeARn</a>
+            </h1>
+             
+          </div>
+          <!-- Grid column -->
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <!-- Grid column -->
+          <div class="col-md-2 pt-4">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="/student" style= "text-decoration: none;">Home</a>
+            </h6>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-2 pt-4">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="/showQuizzes" style= "text-decoration: none;">Take Quiz</a>
+            </h6>
+          </div>
+          <!-- Grid column -->
+
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <!-- Grid column -->
+          <div class="col-md-2 pt-2" >
+            <a class="btn btn-primary text-uppercase mt-2" style= "float:right" href="/logout">Log out</a>
+          </div>
+          
+      </nav>
+		
+		<div class = "container">
+			<div class = "well text-center">
+				<br>
+				{% for row in user %}
+					<h3 class = "display-4"> Grades for {{row}} </h3>
+				{% endfor %}	
+			</div>
+		</div> 
+		  		<div class = "container">
+					<div class = "row">
+						<div class = "col md-12">
+							<br> <br>
+							<table class="table table-bordered text-center align-middle valign-center table-dark">
+							  <thead>
+								    <tr>
+								      <th scope="col">Quiz Name</th>
+								      <th scope="col">Score</th>
+								      <th scope="col">Teacher</th>
+								      <th scope="col">Last Taken</th>
+								    </tr>
+								  </thead>
+								  <tbody>
+
+								  	{% for row in grades %}
+									    <tr>
+									      <td>{{row.0}}</td>
+									      <td>{{row.2}}</td>
+									      <td>{{row.3}}</td>
+									      <td>{{row.4}}</td>
+									    </tr>
+
+									{% endfor %}
+							    
+							  </tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+		{% endblock %}
+	</body>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</html>

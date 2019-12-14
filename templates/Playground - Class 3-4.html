@@ -1,0 +1,319 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<link href='//fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<h1 align="center" style="text-shadow: 2px 2px 4px #000000">Playground</h1>
+	
+	<style>
+
+		/* You don't acutally need any of this styles */
+
+		html{
+			font-size:10px;
+		}
+		body{
+			font-size:2rem;
+			font-family: 'Lato', sans-serif;
+			font-size: 300;
+			-webkit-font-smoothing: antialiased;
+			background: #F8F8FF ;
+			color: white;
+			padding: 0 2em;
+		}
+		h1{
+			font-size: 2em;
+			font-weight: 300;
+			color:grey;
+			align:center;
+		}
+		.container .box .box-row{
+			display: table-row;
+		}
+			.container .box .box-cell{
+			display: table-cell;
+			width: 60%;
+			padding: 10px;
+		}
+
+		#drop{
+			width: 1000px;
+			height: 90px;
+			border: 4px dashed grey;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			padding: 1em 1em 2em 1em;
+			overflow-y: hidden;
+			box-shadow: 10px 10px 5px grey;
+		}
+		#operationBox{
+			
+			width: 280px;
+			height: 50px;
+			border: 4px dashed grey;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			padding: 1em 1em 2em 1em;
+			overflow-y: hidden;
+			box-shadow: 10px 10px 5px grey;
+		}
+		.dragable-item{
+
+			width: 100px;
+			height: 100px;
+			background: #34495e;
+			margin: 0.75em;
+			text-align: center;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			border-radius: 10px;
+			padding: 1em;
+			float: left;
+			box-shadow: 10px 10px 5px grey;
+		}
+		.dragable-operand{
+
+			width: 95px;
+			height: 95px;
+			background: #34495e;
+			margin: 2px;
+			text-align: center;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			border-radius: 10px;
+			padding: 1em;
+			float: left;
+			box-shadow: 10px 10px 5px grey;
+		}
+		.dragable-button{
+				width: 95px; 
+				height: 95px;
+				background: #34495e;
+				margin: 2px; 
+				text-align: center;
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				box-sizing: border-box;
+				padding: 1em;
+				font-family: 'Lato', sans-serif;
+				-webkit-font-smoothing: antialiased;
+				color: white;
+				box-shadow: 10px 10px 5px grey;
+				float: left;
+				border-radius: 10px;
+		}
+		#total-costs{
+			padding: 1em 0 0 0;
+		}
+		a{
+			clear: both;
+			color: white;
+			text-decoration: none;
+			padding-top: 1em;
+			display: block;
+		}
+		a:hover{
+			color: #ecf0f1;
+		}
+
+		*[draggable=true] {
+		  -moz-user-select:none;
+		  -khtml-user-drag: element;
+		  cursor: move;
+		}
+	</style>
+</head>
+<body>
+<div class="container">
+	<div class="box">
+		<div class="box-row">
+			<div id="drop" class="box-cell box1">
+	<div id="output"></div>
+</div>
+<div id="operationBox"  class="box-cell box2">
+	<div id="output2">
+<div draggable="true" class="dragable-operand" data-title="Box 1" data-price="+" id="operand">+</div>
+<div draggable="true" class="dragable-operand" data-title="Box 2" data-price="-" id="operand">-</div>
+<div draggable="true" class="dragable-operand" data-title="Box 3" data-price="x" id="operand">x</div>
+<div draggable="true" class="dragable-operand" data-title="Box 4" data-price="/" id="operand">/</div>
+</div>
+<button id='equals' class='dragable-button'>=</button>
+<button id='reset' class='dragable-button'>RESET</button>
+</div>
+</div>
+</div>
+</div>
+
+<div id= "textbox" draggable="true" class="dragable-item" data-title="inputBox" data-price="200" contenteditable="true">
+<span id="textid">0</span>
+</div>
+<div draggable="true" class="dragable-item" data-title="Box 1" data-price="1" id="vals" >1</div>
+<div draggable="true" class="dragable-item" data-title="Box 2" data-price="2" id="vals">2</div>
+<div draggable="true" class="dragable-item" data-title="Box 3" data-price="3" id="vals">3</div>
+<div draggable="true" class="dragable-item" data-title="Box 4" data-price="4" id="vals">4</div>
+<div draggable="true" class="dragable-item" data-title="Box 5" data-price="5" id="vals">5</div>
+<div draggable="true" class="dragable-item" data-title="Box 6" data-price="6" id="vals">6</div>
+<div draggable="true" class="dragable-item" data-title="Box 7" data-price="7" id="vals">7</div>
+<div draggable="true" class="dragable-item" data-title="Box 8" data-price="8" id="vals">8</div>
+<div draggable="true" class="dragable-item" data-title="Box 9" data-price="9" id="vals">9</div>
+
+<div style="clear:both;"></div>
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script><script>
+// Callback function when cancelling the event
+function cancel(e) {
+  if (e.preventDefault) {
+    e.preventDefault();
+  }
+  return false;
+}
+
+function refresh_total_costs(total_costs){
+
+	$('#total-costs span').text(total_costs);
+}
+
+function clickFunction(){
+	$('#output').html("");
+	$('#total-costs span').text(0);
+
+}
+
+function equalFunction(){
+		var exChildren=$("#output").children();
+	var arr=[];
+	var operand='';
+
+	for (var i=0; i<exChildren.length; i++){ 
+		
+		if (exChildren[i].innerHTML!='+' && exChildren[i].innerHTML!='-'&& exChildren[i].innerHTML!='x' && exChildren[i].innerHTML!='/'){
+			arr.push(parseInt(exChildren[i].innerHTML));
+			
+		}
+		else{
+			operand=exChildren[i].innerHTML;
+			var indx=i;
+		}
+
+	}
+	console.log(indx);
+	var a1=arr[0];
+	var a2=arr[1];
+	if (operand=='+'){
+		bool=false;
+		var result=a1+a2;
+	}
+	else if (operand=='-'){
+		bool=false;
+		var result=a1-a2;
+	}
+	else if (operand=='x'){
+		bool=false;
+		var result=a1*a2;
+	}
+	else if (operand=='/'){
+		bool=true;
+		var result1=a1/a2;
+		result1=Math.floor(result1);
+		var result2=a1%a2;
+	}
+	if(bool)
+	{
+		if (typeof(result1) == 'undefined' ||   isNaN(parseFloat(result1))) {
+		var result='Sorry! &#128546 Wrong Equation';
+		var html='<div draggable="true" class="dragable-item" data-title="Box 9" data-price="9" id="vals" style="background:#de0b0b;font-size: .8em;" >'+result+'</div>';		
+		
+		$('#output').append(html);	
+	}
+		else{
+		result='Reminder:'+result2+' Quotient:'+result1;
+		var html='<div draggable="true" class="dragable-item" data-title="Box 9" data-price="9" id="vals">=</div><div draggable="true" class="dragable-item" data-title="Box 9" data-price="9" id="vals" style="font-size:0.8em;">'+result+'</div>';		
+		$('#output').append(html);
+	}
+}
+	else{
+	
+	if (typeof(result) == 'undefined' ||   isNaN(parseFloat(result))) {
+		var result='Sorry! &#128546 Wrong Equation';
+	var html='<div draggable="true" class="dragable-item" data-title="Box 9" data-price="9" id="vals" style="background:#de0b0b;font-size: .8em;" >'+result+'</div>';		
+	
+	$('#output').append(html);	
+	}
+	else{
+
+		var html='<div draggable="true" class="dragable-item" data-title="Box 9" data-price="9" id="vals">=</div><div draggable="true" class="dragable-item" data-title="Box 9" data-price="9" id="vals">'+result+'</div>';		
+	
+	$('#output').append(html);
+
+	}
+}
+
+	
+
+}	
+$(document).ready(function() {
+		var total_costs = 0;
+		console.log(parseInt($(".textid").text()));
+		refresh_total_costs(total_costs);
+		// Get the #drop zone
+		var drop = document.getElementById('drop');
+		var draggedItem = null;
+		// Add the Event Listener to each draggable item
+		$('.dragable-item').each(function(index){
+			$(this)[0].addEventListener('dragstart',function(e){
+
+				draggedItem = jQuery(this);
+
+				e.dataTransfer.setData('Text', this.id); // required otherwise doesn't work
+
+			},false);
+		});
+
+			$('.dragable-operand').each(function(index){
+			$(this)[0].addEventListener('dragstart',function(e){
+
+				draggedItem = jQuery(this);
+
+				e.dataTransfer.setData('Text', this.id); // required otherwise doesn't work
+
+			},false);
+		});
+		// Reset onClick
+		document.getElementById("reset").addEventListener("click",clickFunction);
+		
+		// Equals onClick
+		document.getElementById("equals").addEventListener("click",equalFunction);
+
+		drop.addEventListener('dragover', cancel);
+		drop.addEventListener('dragenter', cancel);
+
+		drop.addEventListener('drop', function (e) {
+
+		   e.preventDefault();		   
+
+		   if ($(draggedItem).data('title')=='inputBox'){
+
+		   		console.log(document.getElementById("textid").innerHTML);
+		   		var x= document.getElementById("textid").innerHTML;
+		   		var html= ('<div id="iHTML" draggable="true" class="dragable-item" data-title="'+$(draggedItem).data('title')+'" data-price="'+$(draggedItem).data('price')+'">'+x+'</div>')		   
+		   
+		   $('#output').append(html);
+
+		   }
+		   
+		   else{
+		   var html= ('<div id="iHTML" draggable="true" class="dragable-item" data-title="'+$(draggedItem).data('title')+'" data-price="'+$(draggedItem).data('price')+'">'+$(draggedItem).data('price')+'</div>')		   
+		   
+		   $('#output').append(html);
+		   	}
+		
+		  return false;
+		});
+});
+
+</script>
+</body>
+</html>

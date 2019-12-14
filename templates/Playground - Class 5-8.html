@@ -1,0 +1,344 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<link href='//fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Playground</title>
+	
+	<style>
+
+		/* You don't acutally need any of this styles */
+
+
+		body, html {
+		height: 100%;
+		}
+
+
+		html{
+			font-size:10px;
+		}
+		body{
+			font-size:2rem;
+			font-family: 'Lato', sans-serif;
+			font-size: 300;
+			-webkit-font-smoothing: antialiased;
+			background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/59c7a9ed-09b7-4792-8cec-2dc8b96fe260/d7nny02-2fd83011-9738-4aa4-ba73-2dc99ca6f81b.jpg/v1/fill/w_997,h_801,q_70,strp/professional_background_2___free_use_by_theartist100_d7nny02-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9ODIzIiwicGF0aCI6IlwvZlwvNTljN2E5ZWQtMDliNy00NzkyLThjZWMtMmRjOGI5NmZlMjYwXC9kN25ueTAyLTJmZDgzMDExLTk3MzgtNGFhNC1iYTczLTJkYzk5Y2E2ZjgxYi5qcGciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.xi5trZdkJRT51gq98hEUhjG6Si1rj6MLiVZTSocKiQw");	
+			color: white;
+			padding: 0 2em;
+		}
+		h1{
+			text-shadow: 2px 2px #ff0000;
+			font-size: 2em;
+			font-weight: 300;
+		}
+		.container .box .box-row{
+			display: table-row;
+		}
+			.container .box .box-cell{
+			display: table-cell;
+			width: 60%;
+			padding: 10px;
+		}
+
+		#drop{
+			width: 1000px;
+			height: 90px;
+			border: 4px ridge white;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			padding: 1em 1em 2em 1em;
+			overflow-y: hidden;
+
+			box-shadow: 10px 10px 5px #262625
+		}
+		#operationBox{
+			
+			width: 280px;
+			height: 50px;
+			border: 4px ridge white;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			padding: 1em 1em 2em 1em;
+			overflow-y: hidden;
+			box-shadow: 10px 10px 5px #262625;
+
+		}
+		.dragable-item{
+
+			width: 100px;
+			height: 100px;
+			background: #34495e;
+			margin: 0.55em;
+			text-align: center;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			padding: 1em;
+			float: left;
+			border-radius: 50%;
+			box-shadow: 5px 5px 2px #262625;
+		}
+		.dragable-operand{
+
+			width: 95px;
+			height: 95px;
+			background: #34495e;
+			margin: 2px;
+			text-align: center;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			padding: 1em;
+			float: left;
+			border-radius: 8px;
+			box-shadow: 5px 5px 2px #262625;
+		}
+		.dragable-button{
+				width: 95px; 
+				height: 95px;
+				background: #34495e;
+				margin: 2px; 
+				text-align: center;
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				box-sizing: border-box;
+				padding: 1em;
+				font-family: 'Lato', sans-serif;
+				-webkit-font-smoothing: antialiased;
+				color: white;
+				float: left;
+				border-radius: 8px;
+				box-shadow: 5px 5px 2px #262625;
+
+		}
+		#total-costs{
+			padding: 1em 0 0 0;
+		}
+		a{
+			clear: both;
+			color: white;
+			text-decoration: none;
+			padding-top: 1em;
+			display: block;
+		}
+		a:hover{
+			color: #ecf0f1;
+		}
+
+		*[draggable=true] {
+		  -moz-user-select:none;
+		  -khtml-user-drag: element;
+		  cursor: move;
+
+
+		}
+	</style>
+</head>
+<body>
+
+<h1 align="center" style="text-shadow: 4px 4px 8px #000000;">PLAYGROUND</h1>
+<div class="container">
+	<div class="box">
+		<div class="box-row">
+			<div id="drop" class="box-cell box1">
+	<div id="output"></div>
+</div>
+<div id="operationBox"  class="box-cell box2">
+	<div id="output2">
+<div draggable="true" class="dragable-operand" data-title="Box 1" data-price="+" id="operand">+</div>
+<div draggable="true" class="dragable-operand" data-title="Box 2" data-price="-" id="operand">-</div>
+<div draggable="true" class="dragable-operand" data-title="Box 3" data-price="*" id="operand">*</div>
+<div draggable="true" class="dragable-operand" data-title="Box 4" data-price="/" id="operand">/</div>
+<div draggable="true" class="dragable-operand" data-title="Box 4" data-price="(" id="operand">(</div>
+<div draggable="true" class="dragable-operand" data-title="Box 4" data-price=")" id="operand">)</div>
+<div draggable="true" class="dragable-operand" data-title="Box 4" data-price="√" id="operand">√</div>
+</div>
+<button id='undo' class='dragable-button'>UNDO</button>
+<button id='equals' class='dragable-button' style="font-size: 1.5em;">=</button>
+<button id='reset' class='dragable-button'>RESET</button>
+
+
+</div>
+
+</div>
+
+
+</div>
+</div>
+<!-- <div id="total-costs">
+	Total costs: <span></span>
+</div> -->
+
+
+<div id= "textbox" draggable="true" class="dragable-item" data-title="inputBox" data-price="200" contenteditable="true">
+<span id="textid"></span>
+</div>
+
+<div draggable="true" class="dragable-item" data-title="Box 1" data-price="0" id="vals">0</div>
+<div draggable="true" class="dragable-item" data-title="Box 1" data-price="1" id="vals">1</div>
+<div draggable="true" class="dragable-item" data-title="Box 2" data-price="2" id="vals">2</div>
+<div draggable="true" class="dragable-item" data-title="Box 3" data-price="3" id="vals">3</div>
+<div draggable="true" class="dragable-item" data-title="Box 4" data-price="4" id="vals">4</div>
+<div draggable="true" class="dragable-item" data-title="Box 5" data-price="5" id="vals">5</div>
+<div draggable="true" class="dragable-item" data-title="Box 6" data-price="6" id="vals">6</div>
+<div draggable="true" class="dragable-item" data-title="Box 7" data-price="7" id="vals">7</div>
+<div draggable="true" class="dragable-item" data-title="Box 8" data-price="8" id="vals">8</div>
+<div draggable="true" class="dragable-item" data-title="Box 9" data-price="9" id="vals">9</div>
+
+<div style="clear:both;"></div>
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script><script>
+// Callback function when cancelling the event
+
+function cancel(e) {
+  if (e.preventDefault) {
+    e.preventDefault();
+  }
+  return false;
+}
+
+function refresh_total_costs(total_costs){
+
+	$('#total-costs span').text(total_costs);
+}
+
+function clickFunction(){
+	$('#output').html("");
+	$('#total-costs span').text(0);
+}
+
+function undoFunction(){
+	const myNode=document.getElementById("output");
+	myNode.removeChild(myNode.lastChild);	
+}
+
+function equalFunction(){
+	var exChildren=$("#output").children();
+	var ans='';
+	var bool=0;
+	for (var i=0; i<exChildren.length; i++){ 
+			if(exChildren[i].innerHTML=='√')
+			{
+				ans=ans.concat('Math.sqrt(');
+				bool=1;
+				console.log(ans);
+				continue;
+			}
+			
+			if(bool==1)
+			{
+				if(!(exChildren[i].innerHTML==1 || exChildren[i].innerHTML==0 || exChildren[i].innerHTML==2 || exChildren[i].innerHTML==3 || exChildren[i].innerHTML==4 || exChildren[i].innerHTML==5 || exChildren[i].innerHTML==6 || exChildren[i].innerHTML==7 || exChildren[i].innerHTML==8 || exChildren[i].innerHTML==9))
+				{
+					ans=ans.concat(')');
+					ans=ans.concat(exChildren[i].innerHTML);	
+					bool=0;
+					continue;
+				}
+				else
+				{
+					ans=ans.concat(exChildren[i].innerHTML);	
+					console.log(ans);
+					continue;		
+				}
+			}
+			else
+				ans=ans.concat(exChildren[i].innerHTML);	
+			console.log(ans);
+	}
+
+	if(bool==1)
+		ans=ans.concat(')');
+	try{
+	result=eval(ans);
+	if(Math.floor(result)!=result)
+		result=result.toFixed(2);
+	console.log(result)
+}
+catch{
+result="False Equation";
+
+}
+
+var html='<div draggable="true" class="dragable-item" data-title="Box 9" data-price="9" id="vals">=</div><div draggable="true" class="dragable-item" data-title="Box 9" data-price="9" id="vals">'+result+'</div>';		
+	
+	$('#output').append(html);
+
+}
+
+
+
+$(document).ready(function() {
+
+		var total_costs = 0;
+		console.log(parseInt($(".textid").text()));
+		refresh_total_costs(total_costs);
+
+
+		// Get the #drop zone
+		var drop = document.getElementById('drop');
+		var draggedItem = null;
+		
+
+		// Add the Event Listener to each draggable item
+		$('.dragable-item').each(function(index){
+			$(this)[0].addEventListener('dragstart',function(e){
+
+				draggedItem = jQuery(this);
+
+				e.dataTransfer.setData('Text', this.id); // required otherwise doesn't work
+
+			},false);
+		});
+
+			$('.dragable-operand').each(function(index){
+			$(this)[0].addEventListener('dragstart',function(e){
+
+				draggedItem = jQuery(this);
+
+				e.dataTransfer.setData('Text', this.id); // required otherwise doesn't work
+
+			},false);
+		});
+		// Reset onClick
+		document.getElementById("reset").addEventListener("click",clickFunction);
+		document.getElementById("undo").addEventListener("click",undoFunction);
+	
+		// Equals onClick
+		document.getElementById("equals").addEventListener("click",equalFunction);
+
+		drop.addEventListener('dragover', cancel);
+		drop.addEventListener('dragenter', cancel);
+
+		drop.addEventListener('drop', function (e) {
+
+		   e.preventDefault();		   
+		   
+		  		// var html= ('<div id="iHTML" draggable="true" class="dragable-item" data-title="'+$(draggedItem).data('title')+'" data-price="'+$(draggedItem).data('price')+'">'+$(draggedItem).data('operand')+'</div>')
+		   if ($(draggedItem).data('title')=='inputBox'){
+
+		   		console.log(document.getElementById("textid").innerHTML);
+		   		var x= document.getElementById("textid").innerHTML;
+		   		var html= ('<div id="iHTML" draggable="true" class="dragable-item" data-title="'+$(draggedItem).data('title')+'" data-price="'+$(draggedItem).data('price')+'">'+x+'</div>')		   
+		   
+		   $('#output').append(html);
+
+		   }
+		   
+		   else{
+		   var html= ('<div id="iHTML" draggable="true" class="dragable-item" data-title="'+$(draggedItem).data('title')+'" data-price="'+$(draggedItem).data('price')+'">'+$(draggedItem).data('price')+'</div>')		   
+		   
+		   $('#output').append(html);
+		   	}
+		   // total_costs += parseInt($(draggedItem).data('price'));
+
+		   // refresh_total_costs(total_costs);
+		
+		  return false;
+		});
+});
+
+</script>
+</body>
+</html>

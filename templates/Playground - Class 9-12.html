@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<head>
+  <meta charset="utf-8">
+  <title>Playground - High School</title>
+  <style>
+
+  	body, html {
+		height: 100%;
+		}
+
+
+		html{
+			font-size:10px;
+		}
+		body{
+			font-size:2rem;
+			font-family: 'Lato', sans-serif;
+			font-size: 300;
+			-webkit-font-smoothing: antialiased;
+			background-image: url("https://www.publicdomainpictures.net/pictures/70000/velka/background-1383594747Im9.jpg");	
+			 background-repeat: no-repeat;
+			  background-size: auto;
+			/*background: lightgray;*/
+			color: white;
+			padding: 0 2em;
+		}
+ 
+ 	h1{
+			color: black;
+			text-shadow: 2px 2px grey;
+			font-weight: bolder;
+			font-size: 4em;
+			font-weight: 900;
+		}
+
+		.list-group-itemm{
+
+			font-size: 2rem;
+			width: 90px;
+			height: 90px;
+			background: #34495e;
+			margin-top: 2px;
+			margin-right: 1px;
+			margin-bottom: 2px;
+			margin-left: 3.5px;
+			
+			text-align: center;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			padding: 1em;
+			float: left;
+			border-radius: 50%;
+			color: white;
+		}
+	
+
+    #B{
+      width: 71%;
+      height: 20%;
+      border: 4px ridge white;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      padding:  1em 1em 1em 1em;
+      overflow-y: hidden;
+    }
+
+    /*A is Number*/
+    #A{
+      width: 12%;
+      height: 5%;
+      border: 4px ridge white;
+      -webkit-box-sizing: border-box
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      padding: 1em 1em 2em 1em;
+      overflow-y: hidden;
+    }
+
+    /*Operands*/
+    #C{
+      width: 40%;
+      height: 50%;
+      border: 4px ridge white;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      padding: 1em 1em 1em 1em;
+      overflow-y: hidden;
+    }
+
+    .containerr .box .box-row{
+      display: table-row;
+    }
+      .containerr .box .box-cell{
+      display: table-cell;
+      width: 60%;
+    }
+		
+
+   #one{
+			width: 85px;
+			height: 85px;
+			background: #34495e;
+			margin-top: 2px;
+			margin-right: 1px;
+			margin-bottom: 2px;
+			margin-left: 3.5px;
+			text-align: center;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			padding: 1em;
+			float: left;
+			border-radius: 8px;
+			color: white;
+			font-size: 22px;
+
+		}
+		
+		#two{
+			width: 85px;
+			height: 85px;
+			background: #34495e;
+			margin-top: 2px;
+			margin-right: 1px;
+			margin-bottom: 2px;
+			margin-left: 3.5px;
+			text-align: center;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			padding: 1em;
+			float: left;
+			border-radius: 8px;
+			color: white;
+			font-size: 22px;
+
+		}
+
+
+
+		#three{
+			width: 85px;
+			height: 85px;
+			background: #34495e;
+			margin-top: 2px;
+			margin-right: 1px;
+			margin-bottom: 2px;
+			margin-left: 3.5px;
+			text-align: center;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			padding: 1em;
+			float: left;
+			border-radius: 8px;
+			color: white;
+			font-size: 22px;
+
+		}
+
+		#four{
+			width: 85px;
+			height: 85px;
+			background: #34495e;
+			margin-top: 2px;
+			margin-right: 1px;
+			margin-bottom: 2px;
+			margin-left: 3.5px;
+			text-align: center;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			padding: 1em;
+			float: left;
+			border-radius: 8px;
+			color: white;
+			font-size: 22px;
+
+		}
+
+
+
+		#five{
+			width: 85px;
+			height: 85px;
+			background: #34495e;
+			margin-top: 2px;
+			margin-right: 1px;
+			margin-bottom: 2px;
+			margin-left: 3.5px;
+			text-align: center;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			padding: 1em;
+			float: left;
+			border-radius: 8px;
+			color: white;
+			font-size: 22px;
+
+		}
+
+		#six{
+				width: 85px; 
+				height: 85px;
+				background: #34495e;
+				margin-top: 2px;
+			margin-right: 1px;
+			margin-bottom: 2px;
+			margin-left: 3.5px;
+			opacity: 0.7;
+				text-align: center;
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				box-sizing: border-box;
+				padding: 1em;
+				font-family: 'Lato', sans-serif;
+				-webkit-font-smoothing: antialiased;
+				color: white;
+				float: left;
+				font-size: 22px;
+		}
+
+		#seven{
+				width: 85px; 
+				height: 85px;
+				background: #34495e;
+				margin-top: 2px;
+				margin-right: 1px;
+				margin-bottom: 2px;
+				margin-left: 3.5px;
+				opacity: 0.7;
+
+				text-align: center;
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				box-sizing: border-box;
+				padding: 1em;
+				font-family: 'Lato', sans-serif;
+				-webkit-font-smoothing: antialiased;
+				color: white;
+				float: left;
+				font-size: 22px;
+		}
+
+		/* 1 is = */
+	.dragable-button1{
+				width: 90px; 
+				height: 90px;
+				font-size: 25px;
+				position: absolute;
+				top: 366px;
+				left: 1170px;
+				background-color: green;
+				text-align: center;
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				box-sizing: border-box;
+				padding: 1em;
+				font-family: 'Lato', sans-serif;
+				-webkit-font-smoothing: antialiased;
+				color: white;
+				
+		}
+
+
+		/*2 is chart*/
+		.dragable-button2{
+				width: 90px; 
+				height: 90px;
+				font-size: 25px;
+
+				position: absolute;
+				top: 366px;
+				left: 1292px;
+				
+
+				background-color: green;
+				text-align: center;
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				box-sizing: border-box;
+				padding: 1em;
+				font-family: 'Lato', sans-serif;
+				-webkit-font-smoothing: antialiased;
+				color: white;
+				
+		}
+
+
+		/*3 is dustbin */
+		
+		.dragable-button3{
+			margin-top: 5px;
+			margin-left: 10px;
+		}
+
+
+
+
+		.dragable-button{
+				width: 85px; 
+				height: 85px;
+				margin-top: 2px;
+				margin-right: 2px;
+				margin-bottom: 2px;
+				margin-left: 2px;
+
+				background-color: #c73f23f5;
+				text-align: center;
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				box-sizing: border-box;
+				padding: 1em;
+				font-family: 'Lato', sans-serif;
+				-webkit-font-smoothing: antialiased;
+				color: white;
+				float: left;"
+		}
+
+
+
+.containerr {
+    width: 95%;
+}
+
+
+/*Modal*/
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: green;
+  position: absolute;
+  top:0;
+  right: 0;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
+.submitEq{
+	background-color: #97d6aa;
+				text-align: center;
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				box-sizing: border-box;
+				font-family: 'Lato', sans-serif;
+				-webkit-font-smoothing: antialiased;
+				color: #34495e;
+}
+
+  </style>
+</head>
+<body>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+  <!-- Latest Sortable -->
+  <script src="https://raw.githack.com/SortableJS/Sortable/master/Sortable.js"></script>
+  <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+  <script src="https://unpkg.com/mathjs@6.2.5/dist/math.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-1.35.2.min.js"></script>
+
+<h1 align="center">PLAYGROUND</h1>
+<div class="containerr">
+<div class="box">
+  <div class="box-row">
+
+  <div id="B" class="box-cell list-group">
+    
+    <!-- <div class="list-group-item"></div> -->
+  </div>
+
+  <div id="C" class="box-cell list-group">
+
+    <div id="C1" class="box-cell list-group">
+
+    <div class="list-group-itemm" id="one">+</div>
+    <div class="list-group-itemm" id="one">-</div>
+    <div class="list-group-itemm" id="one">*</div>
+    <div class="list-group-itemm" id="one">/</div>
+    <div class="list-group-itemm" id="two">√</div>
+    <div class="list-group-itemm" id="three">log<sub>e</sub></div>
+    <div class="list-group-itemm" id="four">cos</div>
+    <div class="list-group-itemm" id="five">sin</div>
+    <div class="list-group-itemm" id="six">(</div>
+    <div class="list-group-itemm" id="seven">)</div>
+    <button id='reset' class='dragable-button'>RESET</button>
+    <button id='undo' class='dragable-button'>DELETE <--</button>
+</div>
+
+    <img class="dragable-button3" src="https://img.icons8.com/dotty/100/000000/delete-forever.png">
+    <button id='equals' class='dragable-button1'>=</button>
+    <button id="myBtn" class='dragable-button2' style="font-size: 20px	; color: black; background-color: orange; text-align: center;">Plots<i class="fa fa-line-chart"></i></button>
+
+
+</div>
+
+</div>
+</div>
+
+
+<div class="containerr">
+  <div class="box-row">
+    <div class="box">
+  <div class="box-row">
+  <div id="A" class="box-cell list-group">
+    <div class="list-group-itemm">0</div>
+    <div class="list-group-itemm">1</div>
+    <div class="list-group-itemm">2</div>
+    <div class="list-group-itemm">3</div>
+    <div class="list-group-itemm">4</div>
+    <div class="list-group-itemm">5</div>
+    <div class="list-group-itemm">6</div>
+    <div class="list-group-itemm">7</div>
+    <div class="list-group-itemm">8</div>
+    <div class="list-group-itemm">9</div>
+    <div class="list-group-itemm">π</div>
+    <div class="list-group-itemm">e</div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <form id="form">
+    <span class="close">&times;</span>
+    
+  <label for="eq" style="color: white">Enter an equation:</label>
+  <input type="text" id="eq" value="sin(x)">
+  <input type="submit" value="Plot" style="font-size: 0.8em; height: 2.2em; color: white; background-color: green">
+  </form>
+
+
+<div id="plot"></div>
+
+</div>
+	
+
+<script>
+
+
+// Function for sortable js drag,drop, sort
+  Sortable.create(A, {
+  animation: 200,
+  group: {
+    name: "shared",
+    pull: "clone",
+    revertClone: true,
+    put: false
+  },
+  sort: false
+});
+    Sortable.create(C1, {
+  animation: 200,
+  group: {
+    name: "shared",
+    pull: "clone",
+    revertClone: true,
+    put: false
+  },
+  sort: false
+});
+
+Sortable.create(B, {
+  group: "shared",
+  sort: true,
+  direction: 'horizontal',
+   removeOnSpill:true
+});
+//reset function
+function clickFunction(){
+  $('#B').html("");
+  
+
+}
+
+
+
+//UNDO Function
+function undoFunction(){
+	const myNode=document.getElementById("B");
+	myNode.removeChild(myNode.lastChild);	
+}
+
+
+//equal function
+
+function equalFunction(){
+    var exChildren=$("#B").children();
+ 
+    var ans='';
+	var bool=0;
+	for (var i=0; i<exChildren.length; i++)
+	{ 
+			/*var pow=0, i=0, j=0;
+			var ans2=0;
+			*//*if(exChildren[i].innerHTML=='^')
+			{
+				pow=1;
+				var curr=i-1;
+				var string1='';
+				while((exChildren[curr].innerHTML.charCodeAt()>=48 || exChildren[curr].innerHTML.charCodeAt()<=57))
+				{
+					if(curr>=1)
+					{	
+						string1=string1.concat(exChildren[curr].innerHTML);
+						curr--;	
+					}
+					else
+					{
+						string1=string1.concat(exChildren[0].innerHTML);
+						break;
+					}
+				}
+				if(curr>=1)
+				{
+					string1=string1.concat(exChildren[curr-1].innerHTML);
+				}
+				string1=string1.split('').reverse().join('');	
+				console.log(string1);
+
+				var string2='';
+				var curr=i+1;
+				
+				while(exChildren[curr].innerHTML.charCodeAt()>=48 || exChildren[curr].innerHTML.charCodeAt()<=57)
+				{
+					if(curr<exChildren.length-1)
+					{
+						string2=string2.concat(exChildren[curr].innerHTML);
+						curr++;	
+					}
+					else
+					{
+						string2=string2.concat(exChildren[exChildren.length-1].innerHTML);
+						break;
+					}
+				}
+				console.log(string2);
+				var x=parseInt(string1);
+				var y=parseInt(string2);
+				ans2=(Math.pow(x,y));
+				console.log(ans2);
+				break;
+			}
+
+*/			
+
+			if(exChildren[i].innerHTML=='√')
+			{
+				ans=ans.concat('Math.sqrt(');
+				bool=1;
+				console.log(ans);
+				continue;
+			}
+
+
+			if(exChildren[i].innerHTML=='π')
+			{
+				ans=ans.concat('Math.PI');
+				continue;
+			}
+
+
+			if(exChildren[i].innerHTML=='e')
+			{
+				ans=ans.concat('Math.E');
+				continue;
+			}
+
+
+			if(exChildren[i].innerHTML=='cos')
+			{
+				ans=ans.concat('Math.cos(');
+				bool=1;
+				console.log(ans);
+				continue;
+			}
+
+
+
+
+
+			if(exChildren[i].innerHTML=='sin')
+			{
+				ans=ans.concat('Math.sin(');
+				bool=1;
+				console.log(ans);
+				continue;
+			}
+
+
+
+			if(exChildren[i].innerHTML=='log<sub>e</sub>')
+			{
+				ans=ans.concat('Math.log(');
+				bool=1;
+				console.log(ans);
+				continue;
+			}
+
+
+
+			if(bool==1)
+			{
+				if(!(exChildren[i].innerHTML==1 || exChildren[i].innerHTML==0 || exChildren[i].innerHTML==2 || exChildren[i].innerHTML==3 || exChildren[i].innerHTML==4 || exChildren[i].innerHTML==5 || exChildren[i].innerHTML==6 || exChildren[i].innerHTML==7 || exChildren[i].innerHTML==8 || exChildren[i].innerHTML==9))
+				{
+					ans=ans.concat(')');
+					ans=ans.concat(exChildren[i].innerHTML);	
+					bool=0;
+					continue;
+				}
+				else
+				{
+					ans=ans.concat(exChildren[i].innerHTML);	
+					console.log(ans);
+					continue;		
+				}
+			}
+			else
+				ans=ans.concat(exChildren[i].innerHTML);	
+			console.log(ans);
+	}
+	if(bool==1)
+		ans=ans.concat(')');
+
+	try{
+		result=eval(ans);
+		if(Math.floor(result)!=result)
+			result=result.toFixed(2);
+		console.log(result)
+
+	var html='<div draggable="true" class="list-group-itemm" data-title="Box 9" data-price="9" id="vals" style="background: green">=</div><div draggable="true" class="list-group-itemm" data-title="Box 9" data-price="9" id="vals">'+result+'</div>';		
+		
+		$('#B').append(html);
+	}
+
+	catch{
+
+		result="False Equation";
+
+	var html='<div draggable="true" class="list-group-itemm" data-title="Box 9" data-price="9" id="vals" style="background: green">=</div><div draggable="true" class="list-group-itemm" data-title="Box 9" data-price="9" id="vals">'+result+'</div>';		
+		
+		$('#B').append(html);
+
+	}
+
+
+
+}
+
+$(document).ready(function() {
+
+    clickFunction();
+    // Reset onClick
+    document.getElementById("reset").addEventListener("click",clickFunction);
+    document.getElementById("undo").addEventListener("click",undoFunction);
+	
+    // Equals onClick
+    document.getElementById("equals").addEventListener("click",equalFunction);
+
+});
+
+
+
+
+
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+ var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+   modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+// window.onclick = function(event) {
+//   if (event.target == modal) {
+//     modal.style.display = "none";
+//   }
+// }
+
+
+function draw() {
+    try {
+      // compile the expression once
+      const expression = document.getElementById('eq').value
+      const expr = math.compile(expression)
+
+      // evaluate the expression repeatedly for different values of x
+      const xValues = math.range(-10, 10, 0.5).toArray()
+      const yValues = xValues.map(function (x) {
+        return expr.evaluate({x: x})
+      })
+
+      // render the plot using plotly
+      const trace1 = {
+        x: xValues,
+        y: yValues,
+        type: 'scatter'
+      }
+      const data = [trace1]
+      Plotly.newPlot('plot', data)
+    }
+    catch (err) {
+      console.error(err)
+      alert(err)
+    }
+  }
+
+  document.getElementById('form').onsubmit = function (event) {
+    event.preventDefault()
+    draw()
+  }
+
+  
+
+</script>
+
+
+</body>
+</html>

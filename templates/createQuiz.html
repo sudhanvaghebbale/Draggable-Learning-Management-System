@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Create Quiz</title>
+  <!-- Bootstrap core CSS -->
+  <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">-->
+
+  <!-- Custom fonts for this template -->
+  <link href="static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="static/vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nanum+Brush+Script&display=swap" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="static/css/landing-page.min.css" rel="stylesheet">
+
+  <script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> </script> 
+      
+  <script src= "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"> </script> 
+      
+  <script src= "https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"> </script>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <!-- Grid row-->
+        <nav class="row sticky-top bg-light text-center d-flex justify-content-center">
+
+          <!-- Grid column -->
+          <div class="col-md-2 pt-3">
+            <h1 class="font-weight-bold" style = "font-family: 'Nanum Brush Script', cursive;">
+              <a href = "/adminconsole" style= "text-decoration: none;">LeARn</a>
+            </h1>
+             
+          </div>
+          <!-- Grid column -->
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <!-- Grid column -->
+          <div class="col-md-2 pt-4">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="/teacher" style= "text-decoration: none;">Home</a>
+            </h6>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-2 pt-4">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="/playground" style= "text-decoration: none;">PlayGround</a>
+            </h6>
+          </div>
+          <!-- Grid column -->
+
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <!-- Grid column -->
+          <div class="col-md-2 pt-2" >
+            <a class="btn btn-primary text-uppercase mt-2" style= "float:right" href="/logout">Log out</a>
+          </div>
+          
+      </nav>
+
+
+  <section class="features-icons bg-light text-center">
+    <div class="container" id="Quiz">
+      <form class="form-signin was-validated" action="/createQuestion" method = "POST"> 
+        <div id="Qspace">
+            <div class="form-group"> 
+                <p class="text-left">Question 1</p> 
+                <input type="text" class="form-control" id="Q1"
+                      placeholder="Type text here" name="Q1" required onblur="calc()">
+                <div class="valid-feedback">Valid</div> 
+                <div class="invalid-feedback"> 
+                    Please fill this field 
+                </div>
+                <div class="form-group form-inline">
+                <input type="text" id="A1" name="A1" class="form-control" placeholder="Answer" style="width:500px" required>
+                <div class="valid-feedback">Valid</div> 
+                <div class="invalid-feedback"> 
+                    Please fill this field 
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="form-group-btn"> 
+                <button class="btn btn-success" id="addq" name="addquestion" type="button" onclick="addQuestion()"><i class="glyphicon glyphicon-plus"></i> Question +</button>
+            </div>
+        </div>
+        <button type="submit" class="btn bg-success">Submit</button>
+      </form>
+   </section>
+
+  <script type="text/javascript">
+    var i = 1;
+    function addQuestion()
+    {
+      i++;
+      var questionadder = document.getElementById("Qspace")
+      var divnew = document.createElement("div");
+      divnew.className = 'form-group';
+      divnew.innerHTML = '<p class="text-left">' + 'Question ' + i +  '</p>' + '<div class="form-inline">' + '<input type="text" id="Q'+i+'"name="Q'+i+'"class="form-control" placeholder="Enter text here" style="width:1078px" required onblur="calc()">' + '<div class="form-group-btn">' + '<button class="btn btn-danger remove" type="button">' + '<i class="glyphicon glyphicon-remove">' + '</i>' + '-' + '</button>' + '</div>' + '<div class="valid-feedback">' + 'Valid' + '</div>' + '<div class="invalid-feedback">' +  'Please fill the field' + '</div>' + '</div>' + '<div class="form-group form-inline">' + '<input type="text" id="A'+i+'"name="A'+i+'" class="form-control" placeholder="Answer" style="width:500px" required>' + '<div class="valid-feedback">' + 'Valid' + '</div>' + '<div class="invalid-feedback">' +  'Please fill the field' + '</div>' + '</div>';
+      questionadder.appendChild(divnew)
+    }
+    
+    
+    function calc()
+    {
+      var x = document.getElementById("Q"+i).value;
+      var a = eval(x);
+      document.getElementById("A"+i).value = a;
+    }
+  </script>
+
+  <script type="text/javascript">
+    
+    $(document).ready(function(){
+      $("body").on("click",".remove",function(){ 
+          $(this).parents(".form-group").remove();
+      });
+    });
+  </script>
+
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

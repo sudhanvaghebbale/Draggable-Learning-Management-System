@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>SER 515 Project</title>
+  <!-- Bootstrap core CSS -->
+  <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">-->
+
+  <!-- Custom fonts for this template -->
+  <link href="static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="static/vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+  <!-- Custom styles for this template -->
+  <link href="static/css/landing-page.min.css" rel="stylesheet">
+
+  <script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> </script> 
+      
+  <script src= "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"> </script> 
+      
+  <script src= "https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"> </script>
+  <style type="text/css">
+    .btn-btn-success:onclick{
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Grid row-->
+        <nav class="row bg-light sticky-top text-center d-flex justify-content-center">
+
+          <!-- Grid column -->
+          <div class="col-md-2 pt-3">
+            <h2 class="font-weight-bold" style = "font-family: 'Nanum Brush Script', cursive;">
+              <a href = "/adminconsole" style= "text-decoration: none;">cos(Y !=)</a>
+            </h2>
+             
+          </div>
+          <!-- Grid column -->
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <!-- Grid column -->
+          <div class="col-md-2 pt-4">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="/teacher" style= "text-decoration: none;">Home</a>
+            </h6>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-2 pt-4">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="/playground" style= "text-decoration: none;">Playground</a>
+            </h6>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-2 pt-4">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="/createQuiz" style= "text-decoration: none;">Create Quiz</a>
+            </h6>
+          </div>
+
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <!-- Grid column -->
+          <div class="col-md-2 pt-2" >
+            <a class="btn btn-primary text-uppercase mt-2" style= "float:right" href="/logout">Log out</a>
+          </div>
+          
+      </nav>
+
+  <!-- Icons Grid -->
+  <section class="features-icons bg-white text-center">
+    <div class="container1" id="container1">
+      <div class="row">
+        <div class="col-8">
+          <p>Question 1:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 2 + 3 = ?</p>
+          <br>
+        <div class="row">
+          <div class="col-8"><li>A. 5 </li></div>
+        </div>
+        <div class="row">
+          <div class="col-8"><li>B. 7</li></div>
+        </div>
+        <div class="row">
+          <div class="col-8"><li>C. 1</li></div>
+        </div>
+        <div class="row">
+          <div class="col-8"><li>D. 6</li></div>
+        </div>
+      </div>
+      <div class="col-4">
+        <br>
+        <br>
+        <br>
+        <div class="btn-group-vertical">
+          <button type="button" class="btn btn-success" id="update" onclick="document.getElementById('container1').style.backgroundColor='green'; score()">Correct</button>
+          <button type="button" class="btn btn-danger" onclick="document.getElementById('container1').style.backgroundColor='red'">Incorrect</button>
+      </div>
+    </div>
+    </div>
+  </div>
+  <br>
+  <div class="container2" id="container2">
+      <div class="row">
+        <div class="col-8">
+          <p class="text-center">Question 2:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 225 / 5 = ? </p>
+          <br>
+        <div class="row">
+          <div class="col-8"><li>A. 52</li></div>
+        </div>
+        <div class="row">
+          <div class="col-8"><li>B. 67</li></div>
+        </div>
+        <div class="row">
+          <div class="col-8"><li>C. 15</li></div>
+        </div>
+        <div class="row">
+          <div class="col-8"><li>D. 45</li></div>
+        </div>
+      </div>
+      <div class="col-4">
+        <br>
+        <br>
+        <br>
+        <div class="btn-group-vertical">
+          <button type="button" class="btn btn-success" id ="update" onclick="document.getElementById('container2').style.backgroundColor='green'; score()">Correct</button>
+          <button type="button" class="btn btn-danger" onclick="document.getElementById('container2').style.backgroundColor='red'">Incorrect</button>
+      </div>
+    </div>
+    </div>
+  </div>
+  <br>
+  <div class="container3" id="container3">
+      <div class="row">
+        <div class="col-8">
+          <p class="text-center">Question 3:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 41 * 27 = ? </p>
+          <br>
+        <div class="row">
+          <div class="col-8"><li>A. 1331</li></div>
+        </div>
+        <div class="row">
+          <div class="col-8"><li>B. 1428</li></div>
+        </div>
+        <div class="row">
+          <div class="col-8"><li>C. 1107</li></div>
+        </div>
+        <div class="row">
+          <div class="col-8"><li>D. 1007</li></div>
+        </div>
+      </div>
+      <div class="col-4">
+        <br>
+        <br>
+        <br>
+        <div class="btn-group-vertical">
+          <button type="button" class="btn btn-success" id ="update" onclick="document.getElementById('container3').style.backgroundColor='green'; score()">Correct</button>
+          <button type="button" class="btn btn-danger" onclick="document.getElementById('container3').style.backgroundColor='red'">Incorrect</button>
+      </div>
+    </div>
+    </div>
+  </div>
+  <br>
+  <div class="container4" id="container4">
+      <div class="row">
+        <div class="col-8">
+          <p class="text-center">Question 4:&emsp;&emsp;&emsp;&emsp; ((15 - 5) * 8 / 4) + 10 = ? </p>
+          <br>
+        <div class="row">
+          <div class="col-8"><li>A. 50</li></div>
+        </div>
+        <div class="row">
+          <div class="col-8"><li>B. 65</li></div>
+        </div>
+        <div class="row">
+          <div class="col-8"><li>C. 30</li></div>
+        </div>
+        <div class="row">
+          <div class="col-8"><li>D. 65</li></div>
+        </div>
+      </div>
+      <div class="col-4">
+        <br>
+        <br>
+        <br>
+        <div class="btn-group-vertical">
+          <button type="button" class="btn btn-success" id ="update" onclick="document.getElementById('container4').style.backgroundColor='green'; score()">Correct</button>
+          <button type="button" class="btn btn-danger" onclick="document.getElementById('container4').style.backgroundColor='red'">Incorrect</button>
+      </div>
+    </div>
+    </div>
+  </div>
+  <br>
+  <div class="container5" id="container5">
+      <div class="row">
+        <div class="col-8">
+          <p class="text-center">Question 5:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &radic;121 = ? </p>
+          <br>
+        <div class="row">
+          <div class="col-8"><li>A.15 </li></div>
+        </div>
+        <div class="row">
+          <div class="col-8"><li>B.21 </li></div>
+        </div>
+        <div class="row">
+          <div class="col-8"><li>C.13 </li></div>
+        </div>
+        <div class="row">
+          <div class="col-8"><li>D.11 </li></div>
+        </div>
+      </div>
+      <div class="col-4">
+        <br>
+        <br>
+        <br>
+        <div class="btn-group-vertical">
+          <button type="button" class="btn btn-success" id ="update" onclick="document.getElementById('container5').style.backgroundColor='green'; score()">Correct</button>
+          <button type="button" class="btn btn-danger" onclick="document.getElementById('container5').style.backgroundColor='red'">Incorrect</button>
+      </div>
+    </div>
+    </div>
+  </div>
+  <br>
+  <div class="container6" id="container6">
+      <div class="row">
+        <div class="col-8">
+          <p class="text-center">Question 6: &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &#8731;1331 = ?</p>
+          <br>
+        <div class="row">
+          <div class="col-8"><li>A.51 </li></div>
+        </div>
+        <div class="row">
+          <div class="col-8"><li>B.11 </li></div>
+        </div>
+        <div class="row">
+          <div class="col-8"><li>C.67 </li></div>
+        </div>
+        <div class="row">
+          <div class="col-8"><li>D.23 </li></div>
+        </div>
+      </div>
+      <div class="col-4">
+        <br>
+        <br>
+        <br>
+        <div class="btn-group-vertical">
+          <button type="button" class="btn btn-success" id ="update" onclick="document.getElementById('container6').style.backgroundColor='green'; score()">Correct</button>
+          <button type="button" class="btn btn-danger" onclick="document.getElementById('container6').style.backgroundColor='red'">Incorrect</button>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div><h4>Final Score:</h4>
+    <h4 id="score">0</h4>
+    <input type="submit" class ="btn btn-success" onclick="sendscore();"></button>
+  <div>
+
+  </section>
+
+  <script type="text/javascript">
+    function score() 
+    {
+      var count = document.getElementById("score").innerHTML;
+      count++;
+      document.getElementById("score").innerHTML = count;
+    }
+  </script>
+
+  <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
